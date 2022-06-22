@@ -26,7 +26,7 @@ class _SettingDiskonState extends State<SettingDiskon> {
                 decoration: const InputDecoration(
                     suffixIcon: Icon(
                       Icons.discount_outlined,
-                      color: basicWarna,
+                      color: hijau,
                     ),
                     hintText: "discount",
                     border: InputBorder.none,
@@ -36,7 +36,7 @@ class _SettingDiskonState extends State<SettingDiskon> {
             ),
             actions: [
               ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: basicWarna),
+                  style: ElevatedButton.styleFrom(primary: hijau),
                   onPressed: () {
                     namamenu!.clear();
                     showSuccess();
@@ -47,7 +47,7 @@ class _SettingDiskonState extends State<SettingDiskon> {
                     style: GoogleFonts.ubuntu(color: Colors.grey[800]),
                   )),
               ElevatedButton(
-                  style: ElevatedButton.styleFrom(primary: basicWarna),
+                  style: ElevatedButton.styleFrom(primary: hijau),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -96,20 +96,20 @@ class _SettingDiskonState extends State<SettingDiskon> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: basicWarna,
+        backgroundColor: hijau,
         automaticallyImplyLeading: false,
         title: Text(
           'Setting Discount',
-          style: GoogleFonts.ubuntu(color: Colors.grey[800]),
+          style: GoogleFonts.ubuntu(color: Colors.white),
         ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
           splashRadius: 20,
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
-            color: Colors.grey[800],
+            color: Colors.white,
           ),
         ),
       ),
@@ -140,7 +140,7 @@ class _SettingDiskonState extends State<SettingDiskon> {
                 padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                 child: Row(
                   children: [
-                    // const Icon(Icons.ramen_dining, color: basicWarna),
+                    // const Icon(Icons.ramen_dining, color: hijau),
                     Expanded(
                       child: TextFormField(
                         controller: namamenu,
@@ -168,14 +168,15 @@ class _SettingDiskonState extends State<SettingDiskon> {
                             width: 120,
                             height: 45,
                             decoration: BoxDecoration(
-                                color: basicWarna,
+                                color: hijau,
                                 borderRadius: BorderRadius.circular(8)),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Text(
                                   'set diskon',
-                                  style: GoogleFonts.ubuntu(),
+                                  style:
+                                      GoogleFonts.ubuntu(color: Colors.white),
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -184,14 +185,14 @@ class _SettingDiskonState extends State<SettingDiskon> {
                                   padding: const EdgeInsets.only(
                                       bottom: 4.0, top: 4.0),
                                   child: Material(
-                                    color: basicWarna,
+                                    color: hijau,
                                     borderRadius: BorderRadius.circular(8),
                                     elevation: 4,
-                                    child: SizedBox(
+                                    child: const SizedBox(
                                       height: 30,
                                       width: 30,
                                       child: Icon(Icons.discount_outlined,
-                                          size: 20, color: Colors.grey[800]),
+                                          size: 20, color: Colors.white),
                                     ),
                                   ),
                                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sego/pages/cart.dart';
 import 'package:sego/pages/diskon/setting_diskon.dart';
@@ -50,8 +51,7 @@ class _HomePagesState extends State<HomePages> {
                                 child: IconButton(
                                     onPressed: () =>
                                         _key.currentState?.openDrawer(),
-                                    icon: const Icon(Icons.menu,
-                                        color: basicWarna)),
+                                    icon: const Icon(Icons.menu, color: hijau)),
                               ),
                             ),
                           ),
@@ -61,7 +61,7 @@ class _HomePagesState extends State<HomePages> {
                                 style: GoogleFonts.pacifico(
                                     fontWeight: FontWeight.w600,
                                     fontSize: 25,
-                                    color: basicWarna)),
+                                    color: hijau)),
                           ),
                           const Spacer(),
                           Material(
@@ -86,7 +86,7 @@ class _HomePagesState extends State<HomePages> {
                                                   const CartPages()));
                                     },
                                     child: const Icon(Icons.shopping_basket,
-                                        color: basicWarna),
+                                        color: hijau),
                                   ),
                                   Material(
                                     borderRadius: BorderRadius.circular(8),
@@ -95,13 +95,13 @@ class _HomePagesState extends State<HomePages> {
                                       height: 30,
                                       width: 30,
                                       decoration: BoxDecoration(
-                                          color: basicWarna,
+                                          color: hijau,
                                           borderRadius:
                                               BorderRadius.circular(8)),
-                                      child: Center(
+                                      child: const Center(
                                         child: Text(
                                           "3",
-                                          style: TextStyle(color: fontWarna),
+                                          style: TextStyle(color: Colors.white),
                                         ),
                                       ),
                                     ),
@@ -136,7 +136,7 @@ class _HomePagesState extends State<HomePages> {
                           padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                           child: Row(
                             children: [
-                              const Icon(Icons.ramen_dining, color: basicWarna),
+                              const Icon(Icons.ramen_dining, color: hijau),
                               Expanded(
                                 child: TextFormField(
                                   decoration: const InputDecoration(
@@ -146,7 +146,7 @@ class _HomePagesState extends State<HomePages> {
                                           horizontal: 25, vertical: 13)),
                                 ),
                               ),
-                              const Icon(Icons.search, color: basicWarna),
+                              const Icon(Icons.search, color: hijau),
                             ],
                           ),
                         ),
@@ -164,19 +164,23 @@ class _HomePagesState extends State<HomePages> {
                     padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                     child: Row(
                       children: [
-                        rowKategori("All", basicWarna),
+                        rowKategori("All", hijau, Colors.white, Colors.white,
+                            FontAwesomeIcons.cloudMeatball),
                         const SizedBox(
                           width: 5,
                         ),
-                        rowKategori("Foods", Colors.white),
+                        rowKategori("Foods", Colors.white, Colors.grey[800],
+                            hijau, FontAwesomeIcons.bowlFood),
                         const SizedBox(
                           width: 5,
                         ),
-                        rowKategori("Drinks", Colors.white),
+                        rowKategori("Drinks", Colors.white, Colors.grey[800],
+                            hijau, FontAwesomeIcons.bottleDroplet),
                         const SizedBox(
                           width: 5,
                         ),
-                        rowKategori("Other", Colors.white),
+                        rowKategori("Other", Colors.white, Colors.grey[800],
+                            hijau, FontAwesomeIcons.sort),
                       ],
                     ),
                   ),
@@ -185,51 +189,122 @@ class _HomePagesState extends State<HomePages> {
               Expanded(
                   child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 5,
+                child: Stack(
                   children: [
-                    rowMenu(
-                        "Steak Original",
-                        "steak dengan daging sapi pilihan indonesia",
-                        "Rp. 75.000",
-                        'assets/menu1.jpg'),
-                    rowMenu(
-                        "Steak Original",
-                        "steak dengan daging sapi pilihan indonesia",
-                        "Rp. 75.000",
-                        'assets/menu1.jpg'),
-                    rowMenu(
-                        "Steak Hot Lava",
-                        "sensasi pedas daging sapi pilihan indonesia",
-                        "Rp. 145.000",
-                        'assets/menu2.jpg'),
-                    rowMenu(
-                        "Spaghetti Bolognes",
-                        "kelezatan perpaduan bolognes dan spaghetti",
-                        "Rp. 30.000",
-                        'assets/menu3.jpeg'),
-                    rowMenu(
-                        "Steak Original",
-                        "steak dengan daging sapi pilihan indonesia",
-                        "Rp. 75.000",
-                        'assets/menu1.jpg'),
-                    rowMenu(
-                        "Steak Original",
-                        "steak dengan daging sapi pilihan indonesia",
-                        "Rp. 75.000",
-                        'assets/menu1.jpg'),
-                    rowMenu(
-                        "Steak Hot Lava",
-                        "sensasi pedas daging sapi pilihan indonesia",
-                        "Rp. 145.000",
-                        'assets/menu2.jpg'),
-                    rowMenu(
-                        "Spaghetti Bolognes",
-                        "kelezatan perpaduan bolognes dan spaghetti",
-                        "Rp. 30.000",
-                        'assets/menu3.jpeg')
+                    GridView.count(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 5,
+                      mainAxisSpacing: 5,
+                      children: [
+                        rowMenu(
+                            "Steak Original",
+                            "steak dengan daging sapi pilihan indonesia",
+                            "Rp. 75.000",
+                            'assets/menu1.jpg'),
+                        rowMenu(
+                            "Steak Original",
+                            "steak dengan daging sapi pilihan indonesia",
+                            "Rp. 75.000",
+                            'assets/menu1.jpg'),
+                        rowMenu(
+                            "Steak Hot Lava",
+                            "sensasi pedas daging sapi pilihan indonesia",
+                            "Rp. 145.000",
+                            'assets/menu2.jpg'),
+                        rowMenu(
+                            "Spaghetti Bolognes",
+                            "kelezatan perpaduan bolognes dan spaghetti",
+                            "Rp. 30.000",
+                            'assets/menu3.jpeg'),
+                        rowMenu(
+                            "Steak Original",
+                            "steak dengan daging sapi pilihan indonesia",
+                            "Rp. 75.000",
+                            'assets/menu1.jpg'),
+                        rowMenu(
+                            "Steak Original",
+                            "steak dengan daging sapi pilihan indonesia",
+                            "Rp. 75.000",
+                            'assets/menu1.jpg'),
+                        rowMenu(
+                            "Steak Hot Lava",
+                            "sensasi pedas daging sapi pilihan indonesia",
+                            "Rp. 145.000",
+                            'assets/menu2.jpg'),
+                        rowMenu(
+                            "Spaghetti Bolognes",
+                            "kelezatan perpaduan bolognes dan spaghetti",
+                            "Rp. 30.000",
+                            'assets/menu3.jpeg')
+                      ],
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(bottom: 8.0, left: 8, right: 8),
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Container(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width / 1.2,
+                          decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                  color: const Color.fromARGB(255, 95, 90, 90)
+                                      .withOpacity(0.4),
+                                  spreadRadius: 1.4,
+                                  blurRadius: 3,
+                                  offset: const Offset(
+                                      0, 2), // changes position of shadow
+                                ),
+                              ],
+                              color: hijau,
+                              borderRadius: BorderRadius.circular(8)),
+                          child: Row(
+                            children: [
+                              const SizedBox(
+                                width: 20,
+                              ),
+                              const Icon(
+                                Icons.shopping_basket_outlined,
+                                color: Colors.white,
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              const Text(
+                                "4 Items",
+                                style: TextStyle(
+                                    letterSpacing: 2,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 14),
+                              ),
+                              const Spacer(),
+                              Container(
+                                height: 40,
+                                width: 180,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: const Center(
+                                  child: Text(
+                                    "Rp. 250.000",
+                                    style: TextStyle(
+                                        letterSpacing: 2,
+                                        color: hijau,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16),
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               )),
@@ -249,7 +324,7 @@ class _HomePagesState extends State<HomePages> {
       child: Column(
         children: [
           Container(
-            color: basicWarna,
+            color: hijau,
             height: 100,
             child: Row(
               children: [
@@ -278,14 +353,14 @@ class _HomePagesState extends State<HomePages> {
                       style: GoogleFonts.ubuntu(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
-                          color: Colors.grey[800]),
+                          color: Colors.white),
                     ),
                     Text(
                       "Cashier",
                       style: GoogleFonts.ubuntu(
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
-                          color: Colors.grey[800]),
+                          color: Colors.white),
                     ),
                   ],
                 ),
@@ -314,7 +389,7 @@ class _HomePagesState extends State<HomePages> {
                             const Offset(0, 3), // changes position of shadow
                       ),
                     ],
-                    color: basicWarna,
+                    color: hijau,
                     borderRadius: BorderRadius.circular(8)),
                 child: Row(
                   children: [
@@ -617,7 +692,8 @@ class _HomePagesState extends State<HomePages> {
     );
   }
 
-  Container rowKategori(String judul, Color warna) {
+  Container rowKategori(
+      String judul, Color warna, huruf, warnaicon, IconData icon) {
     return Container(
       height: 40,
       width: 130,
@@ -633,11 +709,19 @@ class _HomePagesState extends State<HomePages> {
           ],
           color: warna,
           borderRadius: BorderRadius.circular(8)),
-      child: Center(
-        child: Text(
-          judul,
-          style: GoogleFonts.ubuntu(),
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Icon(
+            icon,
+            color: warnaicon,
+            size: 20,
+          ),
+          Text(
+            judul,
+            style: GoogleFonts.ubuntu(color: huruf),
+          ),
+        ],
       ),
     );
   }

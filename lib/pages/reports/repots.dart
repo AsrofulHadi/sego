@@ -26,16 +26,19 @@ class _ReportsPageState extends State<ReportsPage> {
         children: <Widget>[
           _buildHeader(),
           const SizedBox(height: 20.0),
-          const Padding(
-            padding: EdgeInsets.only(left: 16.0),
+          Padding(
+            padding: const EdgeInsets.only(left: 16.0),
             child: Text(
               "Sellings",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                  color: fontWarna),
             ),
           ),
           Card(
             elevation: 4.0,
-            color: basicWarna,
+            color: hijau,
             margin: const EdgeInsets.all(16.0),
             child: Row(
               children: <Widget>[
@@ -52,7 +55,7 @@ class _ReportsPageState extends State<ReportsPage> {
                             Container(
                               height: 20,
                               width: 8.0,
-                              color: Colors.yellowAccent,
+                              color: hijau,
                             ),
                             const SizedBox(width: 4.0),
                             Container(
@@ -72,8 +75,17 @@ class _ReportsPageState extends State<ReportsPage> {
                           ],
                         ),
                       ),
-                      title: const Text("Month"),
-                      subtitle: const Text("189 Customers"),
+                      title: const Text(
+                        "Month",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: warnaHuruf),
+                      ),
+                      subtitle: const Text(
+                        "189 Customers",
+                        style: TextStyle(fontSize: 14.0, color: warnaHuruf),
+                      ),
                     ),
                   ),
                 ),
@@ -114,8 +126,20 @@ class _ReportsPageState extends State<ReportsPage> {
                           ],
                         ),
                       ),
-                      title: const Text("Today"),
-                      subtitle: const Text("7 Customers"),
+                      title: const Text(
+                        "Today",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                            color: warnaHuruf),
+                      ),
+                      subtitle: const Text(
+                        "7 Customers",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14.0,
+                            color: warnaHuruf),
+                      ),
                     ),
                   ),
                 ),
@@ -129,7 +153,7 @@ class _ReportsPageState extends State<ReportsPage> {
                 Expanded(
                   flex: 2,
                   child: _buildTile(
-                    color: basicWarna,
+                    color: hijau,
                     icon: Icons.dining_sharp,
                     title: "Selling Report",
                     data: "1200 Sellings",
@@ -138,7 +162,7 @@ class _ReportsPageState extends State<ReportsPage> {
                 const SizedBox(width: 16.0),
                 Expanded(
                   child: _buildTile(
-                    color: basicWarna,
+                    color: hijau,
                     icon: Icons.currency_exchange,
                     title: "Spend Reports",
                     data: "85 Spends",
@@ -154,7 +178,7 @@ class _ReportsPageState extends State<ReportsPage> {
               children: <Widget>[
                 Expanded(
                   child: _buildTile(
-                    color: basicWarna,
+                    color: hijau,
                     icon: Icons.favorite,
                     title: "best selles of month",
                     data: "Sales",
@@ -163,7 +187,7 @@ class _ReportsPageState extends State<ReportsPage> {
                 const SizedBox(width: 16.0),
                 Expanded(
                   child: _buildTile(
-                    color: basicWarna,
+                    color: hijau,
                     icon: Icons.portrait,
                     title: "13 Employees",
                     data: "Employee",
@@ -172,7 +196,7 @@ class _ReportsPageState extends State<ReportsPage> {
                 const SizedBox(width: 16.0),
                 Expanded(
                   child: _buildTile(
-                    color: basicWarna,
+                    color: hijau,
                     icon: Icons.hub,
                     title: "Users",
                     data: "4 Users",
@@ -195,7 +219,7 @@ class _ReportsPageState extends State<ReportsPage> {
           bottomLeft: Radius.circular(20.0),
           bottomRight: Radius.circular(20.0),
         ),
-        color: basicWarna,
+        color: hijau,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,14 +231,14 @@ class _ReportsPageState extends State<ReportsPage> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios,
-                    color: Colors.grey[800],
+                    color: Colors.white,
                   )),
               Text(
                 "Sego Resto",
                 style: whiteText.copyWith(
-                    color: Colors.grey[800],
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20.0),
               ),
@@ -227,7 +251,7 @@ class _ReportsPageState extends State<ReportsPage> {
                 "M. Asroful Hadi",
                 style: whiteText.copyWith(
                   fontSize: 18.0,
-                  color: Colors.grey[800],
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -240,7 +264,7 @@ class _ReportsPageState extends State<ReportsPage> {
               subtitle: Text(
                 "Cashier today",
                 style: whiteText.copyWith(
-                    color: Colors.grey[800],
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 12.0),
               ),
@@ -278,19 +302,18 @@ class _ReportsPageState extends State<ReportsPage> {
           Icon(
             icon,
             size: 45,
-            color: Colors.grey[800],
+            color: Colors.white,
           ),
           Text(
             title,
-            style: whiteText.copyWith(
-                fontWeight: FontWeight.bold, color: Colors.grey[800]),
+            style: whiteText.copyWith(color: Colors.white),
           ),
           Text(
             data,
             style: whiteText.copyWith(
                 fontWeight: FontWeight.bold,
                 fontSize: 20.0,
-                color: Colors.grey[800]),
+                color: Colors.white),
           ),
         ],
       ),

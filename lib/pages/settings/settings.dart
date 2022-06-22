@@ -17,7 +17,7 @@ class _SettingPagesState extends State<SettingPages> {
       appBar: AppBar(
         elevation: 2,
         automaticallyImplyLeading: false,
-        backgroundColor: basicWarna,
+        backgroundColor: hijau,
         title: Row(children: [
           const Icon(
             Icons.settings,
@@ -113,7 +113,7 @@ class ListSettings extends StatelessWidget {
                 offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
-            color: basicWarna,
+            color: hijau,
             borderRadius: BorderRadius.circular(8)),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -122,7 +122,7 @@ class ListSettings extends StatelessWidget {
             Icon(
               iconnya,
               size: 40,
-              color: Colors.grey[800],
+              color: Colors.white,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -132,13 +132,12 @@ class ListSettings extends StatelessWidget {
                   style: GoogleFonts.ubuntu(
                     fontWeight: FontWeight.bold,
                     fontSize: 18,
-                    color: Colors.grey[800],
+                    color: Colors.white,
                   ),
                 ),
                 Text(
                   jenis,
-                  style:
-                      GoogleFonts.ubuntu(fontSize: 11, color: Colors.grey[600]),
+                  style: GoogleFonts.ubuntu(fontSize: 11, color: Colors.white),
                 ),
                 const SizedBox(
                   height: 5,
