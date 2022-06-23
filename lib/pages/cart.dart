@@ -14,7 +14,7 @@ class _CartPagesState extends State<CartPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: basicWarna,
+        backgroundColor: hijau,
         elevation: 1,
         title: Row(
           children: const [
